@@ -8,61 +8,220 @@
             <Source>Database</Source>
             <Value>=First(Fields!imgCode.Value, "DataSet1")</Value>
             <MIMEType>image/png</MIMEType>
-            <Top>0.66146cm</Top>
-            <Height>1.5cm</Height>
-            <Width>5cm</Width>
+            <Height>2.24042cm</Height>
+            <Width>4.15333cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Image>
-          <Textbox Name="Textbox8">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Fields!ProductName.Value</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>2.33785cm</Top>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
-            <ZIndex>1</ZIndex>
+        </ReportItems>
+        <KeepTogether>true</KeepTogether>
+        <Top>1.05515cm</Top>
+        <Left>0.79058cm</Left>
+        <Height>2.24042cm</Height>
+        <Width>4.15333cm</Width>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+      <Rectangle Name="Rectangle3">
+        <ReportItems>
+          <Image Name="Image2">
+            <Source>Database</Source>
+            <Value>=First(Fields!imgCode.Value, "DataSet1")</Value>
+            <MIMEType>image/png</MIMEType>
+            <Height>2.24042cm</Height>
+            <Width>4.15333cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
             </Style>
-          </Textbox>
+          </Image>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>2.35162cm</Top>
-        <Left>8.93974cm</Left>
-        <Height>3.03417cm</Height>
-        <Width>5cm</Width>
+        <Top>1.05515cm</Top>
+        <Left>5.92587cm</Left>
+        <Height>2.24042cm</Height>
+        <Width>4.15333cm</Width>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+      <Rectangle Name="Rectangle4">
+        <ReportItems>
+          <Image Name="Image3">
+            <Source>Database</Source>
+            <Value>=First(Fields!imgCode.Value, "DataSet1")</Value>
+            <MIMEType>image/png</MIMEType>
+            <Height>2.24042cm</Height>
+            <Width>4.15333cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+        </ReportItems>
+        <KeepTogether>true</KeepTogether>
+        <Top>1.05515cm</Top>
+        <Left>10.82067cm</Left>
+        <Height>2.24042cm</Height>
+        <Width>4.15333cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+      <Rectangle Name="Rectangle5">
+        <ReportItems>
+          <Image Name="Image4">
+            <Source>Database</Source>
+            <Value>=First(Fields!imgCode.Value, "DataSet1")</Value>
+            <MIMEType>image/png</MIMEType>
+            <Height>2.24042cm</Height>
+            <Width>4.15333cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+        </ReportItems>
+        <KeepTogether>true</KeepTogether>
+        <Top>1.05515cm</Top>
+        <Left>15.60962cm</Left>
+        <Height>2.24042cm</Height>
+        <Width>4.15333cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+      <Rectangle Name="Rectangle6">
+        <ReportItems>
+          <Image Name="Image5">
+            <Source>Database</Source>
+            <Value>=First(Fields!imgCode.Value, "DataSet1")</Value>
+            <MIMEType>image/png</MIMEType>
+            <Height>2.24042cm</Height>
+            <Width>4.15333cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+        </ReportItems>
+        <KeepTogether>true</KeepTogether>
+        <Top>4.0815cm</Top>
+        <Left>0.79058cm</Left>
+        <Height>2.24042cm</Height>
+        <Width>4.15333cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+      <Rectangle Name="Rectangle7">
+        <ReportItems>
+          <Image Name="Image6">
+            <Source>Database</Source>
+            <Value>=First(Fields!imgCode.Value, "DataSet1")</Value>
+            <MIMEType>image/png</MIMEType>
+            <Height>2.24042cm</Height>
+            <Width>4.15333cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+        </ReportItems>
+        <KeepTogether>true</KeepTogether>
+        <Top>4.0815cm</Top>
+        <Left>5.92587cm</Left>
+        <Height>2.24042cm</Height>
+        <Width>4.15333cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+      <Rectangle Name="Rectangle8">
+        <ReportItems>
+          <Image Name="Image7">
+            <Source>Database</Source>
+            <Value>=First(Fields!imgCode.Value, "DataSet1")</Value>
+            <MIMEType>image/png</MIMEType>
+            <Height>2.24042cm</Height>
+            <Width>4.15333cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+        </ReportItems>
+        <KeepTogether>true</KeepTogether>
+        <Top>4.0815cm</Top>
+        <Left>10.82067cm</Left>
+        <Height>2.24042cm</Height>
+        <Width>4.15333cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+      <Rectangle Name="Rectangle9">
+        <ReportItems>
+          <Image Name="Image8">
+            <Source>Database</Source>
+            <Value>=First(Fields!imgCode.Value, "DataSet1")</Value>
+            <MIMEType>image/png</MIMEType>
+            <Height>2.24042cm</Height>
+            <Width>4.15333cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+        </ReportItems>
+        <KeepTogether>true</KeepTogether>
+        <Top>4.0815cm</Top>
+        <Left>15.60962cm</Left>
+        <Height>2.24042cm</Height>
+        <Width>4.15333cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
           </Border>
         </Style>
       </Rectangle>
     </ReportItems>
-    <Height>2.45175in</Height>
+    <Height>11.7in</Height>
     <Style />
   </Body>
-  <Width>6.57142in</Width>
+  <Width>8.32205in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

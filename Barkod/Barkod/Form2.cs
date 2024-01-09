@@ -77,8 +77,6 @@ namespace Barkod
                 DrawControl(imgCode, g, imgBarcode, Color.Black, Color.White);
             }
 
-
-
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Title = "Resim Dosyası";
             saveFile.Filter = "PNG| *.png";
@@ -110,14 +108,17 @@ namespace Barkod
         private void btnPrint_Click(object sender, EventArgs e)
         {
             AppData appData = new AppData();
-            
+            string filePath = saveBarCode();
+
+            Bitmap bitmap = new Bitmap(filePath);
+
             using (MemoryStream ms = new MemoryStream())
             {
-                // AppData DataSet örneği oluşturun (XSD dosyasına göre adlandırma)
+                
+                // Barkodu ms içerisine kaydet
+                //imgBarcode.Image.Save(ms, ImageFormat.Png);
+                bitmap.Save(ms, ImageFormat.Png);
 
-                imgCode.Image.Save(ms, ImageFormat.Png);
-                // DataSet içerisindeki tablolara erişim sağlayın ve işlemlerinizi gerçekleştirin
-                // Örnek:
 
                 // Diyelim ki "Barcode" adında bir DataTable var
                 AppData.BarcodeDataTable barcodeTable = appData.Barcode;
@@ -144,7 +145,7 @@ namespace Barkod
 
                 // DataSet'i MemoryStream'e yazın veya başka işlemler yapın
                 //appData.WriteXml(ms);
-                
+
             }
 
             using (frmReport frm = new frmReport(appData.Barcode))
@@ -154,21 +155,74 @@ namespace Barkod
         }
 
 
-        private byte[] ImageToByteArray(Image image)
+        public string saveBarCode()
         {
-            using (MemoryStream ms = new MemoryStream())
+            Random random = new Random();
+            // Programın bulunduğu dizini al
+            string programDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+            // "barcode" adında bir klasör oluştur
+            string barcodeDirectory = Path.Combine(programDirectory, "barcode");
+            Directory.CreateDirectory(barcodeDirectory);
+
+            // Kaydedilecek dosya yolunu belirle
+            string filePath = Path.Combine(barcodeDirectory, $"{lblProductName}.png");
+            
+
+            if (File.Exists(filePath))
             {
-                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                return ms.ToArray();
+                // Dosya var
+                //Console.WriteLine("Dosya mevcut.");
+                return filePath;
             }
+            else
+            {
+                // Yeni bir Bitmap oluştur
+                int imgBarcode_Width = imgBarcode.Width;
+                int imgBarcode_Height = imgBarcode.Height;
+
+                Bitmap bitmap = new Bitmap(imgBarcode_Width, imgBarcode_Height);
+
+                // Bitmap üzerinde bir Graphics nesnesi oluştur
+                using (Graphics g = Graphics.FromImage(bitmap))
+                {
+                    // imgBarcode'ı bitmap'e çiz
+                    g.Clear(Color.White);
+
+                    // Her bir label'ı ve pictureBox'ı çiz
+                    DrawControl(lblProductCode, g, imgBarcode, Color.Black, Color.White);
+                    DrawControl(lblBusinessName, g, imgBarcode, Color.Black, Color.White);
+                    DrawControl(lblBusinessDomain, g, imgBarcode, Color.Black, Color.White);
+                    DrawControl(lblProductName, g, imgBarcode, Color.Black, Color.White);
+                    DrawControl(imgCode, g, imgBarcode, Color.Black, Color.White);
+                }
+
+                // Dosyayı belirlenen yere kaydet
+                bitmap.Save(filePath);
+
+                // Kaydetme işlemi tamamlandı mesajı göster
+                MessageBox.Show("Kayıt İşlemi Başarılı. Dosya yolu: " + filePath);
+                return filePath;
+            }
+
+            
         }
 
-        private Image ByteArrayToImage(byte[] byteArray)
-        {
-            using (MemoryStream ms = new MemoryStream(byteArray))
-            {
-                return Image.FromStream(ms);
-            }
-        }
+        //private byte[] ImageToByteArray(Image image)
+        //{
+        //    using (MemoryStream ms = new MemoryStream())
+        //    {
+        //        image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+        //        return ms.ToArray();
+        //    }
+        //}
+
+        //private Image ByteArrayToImage(byte[] byteArray)
+        //{
+        //    using (MemoryStream ms = new MemoryStream(byteArray))
+        //    {
+        //        return Image.FromStream(ms);
+        //    }
+        //}
     }
 }
