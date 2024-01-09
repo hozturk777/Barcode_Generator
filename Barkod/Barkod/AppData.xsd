@@ -19,7 +19,7 @@
               <xs:element name="BusinessName" msprop:Generator_ColumnPropNameInTable="BusinessNameColumn" msprop:Generator_ColumnPropNameInRow="BusinessName" msprop:Generator_UserColumnName="BusinessName" msprop:Generator_ColumnVarNameInTable="columnBusinessName" type="xs:string" minOccurs="0" />
               <xs:element name="BusinessDomain" msprop:Generator_ColumnPropNameInTable="BusinessDomainColumn" msprop:Generator_ColumnPropNameInRow="BusinessDomain" msprop:Generator_UserColumnName="BusinessDomain" msprop:Generator_ColumnVarNameInTable="columnBusinessDomain" type="xs:string" minOccurs="0" />
               <xs:element name="ProductName" msprop:Generator_ColumnPropNameInTable="ProductNameColumn" msprop:Generator_ColumnPropNameInRow="ProductName" msprop:Generator_UserColumnName="ProductName" msprop:Generator_ColumnVarNameInTable="columnProductName" type="xs:string" minOccurs="0" />
-              <xs:element name="imgCode" msprop:Generator_ColumnPropNameInTable="imgCodeColumn" msprop:Generator_ColumnPropNameInRow="imgCode" msprop:Generator_UserColumnName="imgCode" msprop:Generator_ColumnVarNameInTable="columnimgCode" type="xs:string" minOccurs="0" />
+              <xs:element name="imgCode" msprop:Generator_ColumnPropNameInRow="imgCode" msprop:Generator_ColumnPropNameInTable="imgCodeColumn" msprop:Generator_ColumnVarNameInTable="columnimgCode" msprop:Generator_UserColumnName="imgCode" type="xs:unsignedByte" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

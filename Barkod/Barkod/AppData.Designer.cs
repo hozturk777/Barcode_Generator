@@ -393,13 +393,13 @@ namespace barcode {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddBarcodeRow(BarcodeRow row) {
+            public void AddBarcodeRow(string text, BarcodeRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public BarcodeRow AddBarcodeRow(string BusinessName, string BusinessDomain, string ProductName, string imgCode) {
+            public BarcodeRow AddBarcodeRow(string BusinessName, string BusinessDomain, string ProductName, byte[] imgCode) {
                 BarcodeRow rowBarcodeRow = ((BarcodeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -454,7 +454,7 @@ namespace barcode {
                 base.Columns.Add(this.columnBusinessDomain);
                 this.columnProductName = new global::System.Data.DataColumn("ProductName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnProductName);
-                this.columnimgCode = new global::System.Data.DataColumn("imgCode", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnimgCode = new global::System.Data.DataColumn("imgCode", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnimgCode);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("BarcodeKey", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
@@ -663,10 +663,10 @@ namespace barcode {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string imgCode {
+            public byte imgCode {
                 get {
                     try {
-                        return ((string)(this[this.tableBarcode.imgCodeColumn]));
+                        return ((byte)(this[this.tableBarcode.imgCodeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'imgCode\' in table \'Barcode\' is DBNull.", e);

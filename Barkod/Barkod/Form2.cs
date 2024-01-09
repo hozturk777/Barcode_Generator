@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -109,11 +110,12 @@ namespace Barkod
         private void btnPrint_Click(object sender, EventArgs e)
         {
             AppData appData = new AppData();
+            
             using (MemoryStream ms = new MemoryStream())
             {
                 // AppData DataSet örneği oluşturun (XSD dosyasına göre adlandırma)
-                
 
+                imgCode.Image.Save(ms, ImageFormat.Png);
                 // DataSet içerisindeki tablolara erişim sağlayın ve işlemlerinizi gerçekleştirin
                 // Örnek:
 
@@ -136,8 +138,8 @@ namespace Barkod
                     barcodeTable.Clear();
                     appData.Barcode.Clear();
                     // DataTable'a satırı ekleyin
-                    barcodeTable.AddBarcodeRow(txtBox.Text, lblBusinessName.Text, lblProductName.Text, "deneme");
-                    appData.Barcode.AddBarcodeRow(txtBox.Text, lblBusinessName.Text, lblProductName.Text, "deneme");
+                    //barcodeTable.AddBarcodeRow(txtBox.Text, lblBusinessName.Text, lblProductName.Text, "deneme");
+                    appData.Barcode.AddBarcodeRow(txtBox.Text, lblBusinessName.Text, lblProductName.Text, ms.ToArray());
                 }
 
                 // DataSet'i MemoryStream'e yazın veya başka işlemler yapın
