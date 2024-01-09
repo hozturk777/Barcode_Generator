@@ -1,4 +1,5 @@
-﻿using System;
+﻿using barcode;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -103,6 +104,69 @@ namespace Barkod
         private void txtHeight_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            AppData appData = new AppData();
+            using (MemoryStream ms = new MemoryStream())
+            {
+                // AppData DataSet örneği oluşturun (XSD dosyasına göre adlandırma)
+                
+
+                // DataSet içerisindeki tablolara erişim sağlayın ve işlemlerinizi gerçekleştirin
+                // Örnek:
+
+                // Diyelim ki "Barcode" adında bir DataTable var
+                AppData.BarcodeDataTable barcodeTable = appData.Barcode;
+
+                for (int i = 0; i < 24; i++)
+                {
+                    //byte[] imageBytes = GetBarcodeImageBytes();
+                    //Image image = ByteArrayToImage(imageBytes);
+
+                    // DataTable'a yeni bir satır ekleyin
+                    AppData.BarcodeRow newRow = barcodeTable.NewBarcodeRow();
+
+                    // Yeni satıra verileri ekleyin
+                    newRow.ProductName = txtBox.Text;
+                    newRow.BusinessName = lblBusinessName.Text;
+                    newRow.BusinessDomain = lblBusinessDomain.Text;
+                    //newRow.Image = imgCode.ToString();
+                    barcodeTable.Clear();
+                    appData.Barcode.Clear();
+                    // DataTable'a satırı ekleyin
+                    barcodeTable.AddBarcodeRow(txtBox.Text, lblBusinessName.Text, lblProductName.Text, "deneme");
+                    appData.Barcode.AddBarcodeRow(txtBox.Text, lblBusinessName.Text, lblProductName.Text, "deneme");
+                }
+
+                // DataSet'i MemoryStream'e yazın veya başka işlemler yapın
+                //appData.WriteXml(ms);
+                
+            }
+
+            using (frmReport frm = new frmReport(appData.Barcode))
+            {
+                frm.ShowDialog();
+            }
+        }
+
+
+        private byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
+
+        private Image ByteArrayToImage(byte[] byteArray)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArray))
+            {
+                return Image.FromStream(ms);
+            }
         }
     }
 }

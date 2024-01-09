@@ -47,6 +47,7 @@
             label3 = new Label();
             txtProductName = new TextBox();
             lblProductName = new Label();
+            btnPrint = new Button();
             ((System.ComponentModel.ISupportInitialize)imgBarcode).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgCode).BeginInit();
             SuspendLayout();
@@ -223,11 +224,22 @@
             lblProductName.TabIndex = 18;
             lblProductName.Text = "label4";
             // 
+            // btnPrint
+            // 
+            btnPrint.Location = new Point(545, 143);
+            btnPrint.Name = "btnPrint";
+            btnPrint.Size = new Size(95, 33);
+            btnPrint.TabIndex = 19;
+            btnPrint.Text = "Yazdır";
+            btnPrint.UseVisualStyleBackColor = true;
+            btnPrint.Click += btnPrint_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(684, 546);
+            Controls.Add(btnPrint);
             Controls.Add(lblProductName);
             Controls.Add(label3);
             Controls.Add(txtProductName);
@@ -276,5 +288,6 @@
         private Label label3;
         private TextBox txtProductName;
         private Label lblProductName;
+        private Button btnPrint;
     }
 }

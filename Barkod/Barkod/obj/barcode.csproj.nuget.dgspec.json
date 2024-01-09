@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\VICTUS\\Desktop\\HÜSEYİN\\Barkod\\Barkod\\Barkod\\barcode.csproj": {}
+    "C:\\Users\\VICTUS\\Desktop\\HÜSEYİN\\BarkodV2\\Barcode_Generator\\Barkod\\Barkod\\barcode.csproj": {}
   },
   "projects": {
-    "C:\\Users\\VICTUS\\Desktop\\HÜSEYİN\\Barkod\\Barkod\\Barkod\\barcode.csproj": {
+    "C:\\Users\\VICTUS\\Desktop\\HÜSEYİN\\BarkodV2\\Barcode_Generator\\Barkod\\Barkod\\barcode.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\VICTUS\\Desktop\\HÜSEYİN\\Barkod\\Barkod\\Barkod\\barcode.csproj",
+        "projectUniqueName": "C:\\Users\\VICTUS\\Desktop\\HÜSEYİN\\BarkodV2\\Barcode_Generator\\Barkod\\Barkod\\barcode.csproj",
         "projectName": "barcode",
-        "projectPath": "C:\\Users\\VICTUS\\Desktop\\HÜSEYİN\\Barkod\\Barkod\\Barkod\\barcode.csproj",
+        "projectPath": "C:\\Users\\VICTUS\\Desktop\\HÜSEYİN\\BarkodV2\\Barcode_Generator\\Barkod\\Barkod\\barcode.csproj",
         "packagesPath": "C:\\Users\\VICTUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\VICTUS\\Desktop\\HÜSEYİN\\Barkod\\Barkod\\Barkod\\obj\\",
+        "outputPath": "C:\\Users\\VICTUS\\Desktop\\HÜSEYİN\\BarkodV2\\Barcode_Generator\\Barkod\\Barkod\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,6 +45,30 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "Microsoft.ReportingServices.ReportViewerControl.Winforms": {
+              "target": "Package",
+              "version": "[140.340.80, )"
+            },
+            "Microsoft.SqlServer.Server": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Microsoft.SqlServer.Types": {
+              "target": "Package",
+              "version": "[160.1000.6, )"
+            },
+            "ReportViewerCore.WinForms": {
+              "target": "Package",
+              "version": "[15.1.9, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
+            },
+            "System.Runtime.CompilerServices.Unsafe": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Zen.Barcode.Rendering.Framework": {
               "target": "Package",
               "version": "[3.1.10729.1, )"
