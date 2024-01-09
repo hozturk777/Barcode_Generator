@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "nOjuYaF+zU7o/fTb1IuEf6yuFb5ZP27+LsqF4qx0CLbgHAcxQZ+YkWqVw+7AUJAnjiUkfP21YlUlb2jtRyx2DA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\VICTUS\\Desktop\\HÜSEYİN\\Barkod\\Barkod\\Barkod\\barcode.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\VICTUS\\.nuget\\packages\\zen.barcode.rendering.framework\\3.1.10729.1\\zen.barcode.rendering.framework.3.1.10729.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Zen.Barcode.Rendering.Framework 3.1.10729.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Zen.Barcode.Rendering.Framework",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+C:\Users\VICTUS\Desktop\Yeni klasör (2)\barcode.exe
+C:\Users\VICTUS\Desktop\Yeni klasör (2)\barcode.dll
+C:\Users\VICTUS\Desktop\Yeni klasör (2)\barcode.deps.json
+C:\Users\VICTUS\Desktop\Yeni klasör (2)\barcode.runtimeconfig.json
+C:\Users\VICTUS\Desktop\Yeni klasör (2)\barcode.pdb
+C:\Users\VICTUS\Desktop\Yeni klasör (2)\Zen.Barcode.Core.dll

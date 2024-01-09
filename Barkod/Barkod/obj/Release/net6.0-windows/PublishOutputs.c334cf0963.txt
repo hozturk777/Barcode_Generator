@@ -1,0 +1,6 @@
+C:\Users\VICTUS\Desktop\BarCodeApp\barcode.exe
+C:\Users\VICTUS\Desktop\BarCodeApp\barcode.dll
+C:\Users\VICTUS\Desktop\BarCodeApp\barcode.deps.json
+C:\Users\VICTUS\Desktop\BarCodeApp\barcode.runtimeconfig.json
+C:\Users\VICTUS\Desktop\BarCodeApp\barcode.pdb
+C:\Users\VICTUS\Desktop\BarCodeApp\Zen.Barcode.Core.dll

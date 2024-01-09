@@ -1,0 +1,7 @@
+C:\Users\VICTUS\Desktop\HÜSEYİN\Barkod\Barkod\Barkod\obj\Debug\net6.0-windows\Barkod.csproj.AssemblyReference.cache
+C:\Users\VICTUS\Desktop\HÜSEYİN\Barkod\Barkod\Barkod\obj\Debug\net6.0-windows\Barkod.Form2.resources
+C:\Users\VICTUS\Desktop\HÜSEYİN\Barkod\Barkod\Barkod\obj\Debug\net6.0-windows\Barkod.csproj.GenerateResource.cache
+C:\Users\VICTUS\Desktop\HÜSEYİN\Barkod\Barkod\Barkod\obj\Debug\net6.0-windows\Barkod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VICTUS\Desktop\HÜSEYİN\Barkod\Barkod\Barkod\obj\Debug\net6.0-windows\Barkod.AssemblyInfoInputs.cache
+C:\Users\VICTUS\Desktop\HÜSEYİN\Barkod\Barkod\Barkod\obj\Debug\net6.0-windows\Barkod.AssemblyInfo.cs
+C:\Users\VICTUS\Desktop\HÜSEYİN\Barkod\Barkod\Barkod\obj\Debug\net6.0-windows\Barkod.csproj.CoreCompileInputs.cache
