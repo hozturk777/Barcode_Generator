@@ -37,7 +37,7 @@
             reportViewer1.Location = new Point(0, 0);
             reportViewer1.Name = "reportViewer1";
             reportViewer1.ServerReport.BearerToken = null;
-            reportViewer1.Size = new Size(800, 450);
+            reportViewer1.Size = new Size(1168, 599);
             reportViewer1.TabIndex = 0;
             reportViewer1.Load += reportViewer1_Load;
             // 
@@ -45,7 +45,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1168, 599);
             Controls.Add(reportViewer1);
             Name = "frmReport";
             Text = "frmReport";

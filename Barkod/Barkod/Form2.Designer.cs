@@ -39,7 +39,6 @@
             imgCode = new PictureBox();
             label2 = new Label();
             lblBusinessName = new Label();
-            lblBusinessDomain = new Label();
             lblCodeName = new Label();
             label5 = new Label();
             txtMargin = new TextBox();
@@ -48,6 +47,7 @@
             txtProductName = new TextBox();
             lblProductName = new Label();
             btnPrint = new Button();
+            lblBusinessDomain = new Label();
             ((System.ComponentModel.ISupportInitialize)imgBarcode).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgCode).BeginInit();
             SuspendLayout();
@@ -94,7 +94,7 @@
             imgBarcode.BackColor = Color.Transparent;
             imgBarcode.Location = new Point(196, 214);
             imgBarcode.Name = "imgBarcode";
-            imgBarcode.Size = new Size(444, 283);
+            imgBarcode.Size = new Size(234, 128);
             imgBarcode.TabIndex = 4;
             imgBarcode.TabStop = false;
             // 
@@ -129,9 +129,9 @@
             // imgCode
             // 
             imgCode.BackColor = Color.Transparent;
-            imgCode.Location = new Point(208, 256);
+            imgCode.Location = new Point(201, 239);
             imgCode.Name = "imgCode";
-            imgCode.Size = new Size(420, 150);
+            imgCode.Size = new Size(215, 68);
             imgCode.TabIndex = 8;
             imgCode.TabStop = false;
             // 
@@ -149,20 +149,12 @@
             // 
             lblBusinessName.AutoSize = true;
             lblBusinessName.BackColor = Color.Transparent;
-            lblBusinessName.Location = new Point(208, 226);
+            lblBusinessName.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            lblBusinessName.Location = new Point(196, 218);
             lblBusinessName.Name = "lblBusinessName";
-            lblBusinessName.Size = new Size(96, 15);
+            lblBusinessName.Size = new Size(95, 13);
             lblBusinessName.TabIndex = 10;
             lblBusinessName.Text = "MestAyHediyelik";
-            // 
-            // lblBusinessDomain
-            // 
-            lblBusinessDomain.AutoSize = true;
-            lblBusinessDomain.Location = new Point(479, 226);
-            lblBusinessDomain.Name = "lblBusinessDomain";
-            lblBusinessDomain.Size = new Size(149, 15);
-            lblBusinessDomain.TabIndex = 11;
-            lblBusinessDomain.Text = "www.mestayhediyelik.com";
             // 
             // lblCodeName
             // 
@@ -192,9 +184,10 @@
             // lblProductCode
             // 
             lblProductCode.AutoSize = true;
-            lblProductCode.Location = new Point(208, 419);
+            lblProductCode.Font = new Font("Segoe UI", 7F, FontStyle.Bold, GraphicsUnit.Point);
+            lblProductCode.Location = new Point(196, 287);
             lblProductCode.Name = "lblProductCode";
-            lblProductCode.Size = new Size(38, 15);
+            lblProductCode.Size = new Size(33, 12);
             lblProductCode.TabIndex = 15;
             lblProductCode.Text = "label3";
             // 
@@ -218,9 +211,10 @@
             // lblProductName
             // 
             lblProductName.AutoSize = true;
-            lblProductName.Location = new Point(208, 462);
+            lblProductName.Font = new Font("Segoe UI", 7F, FontStyle.Bold, GraphicsUnit.Point);
+            lblProductName.Location = new Point(196, 310);
             lblProductName.Name = "lblProductName";
-            lblProductName.Size = new Size(38, 15);
+            lblProductName.Size = new Size(33, 12);
             lblProductName.TabIndex = 18;
             lblProductName.Text = "label4";
             // 
@@ -233,6 +227,16 @@
             btnPrint.Text = "Yazdır";
             btnPrint.UseVisualStyleBackColor = true;
             btnPrint.Click += btnPrint_Click;
+            // 
+            // lblBusinessDomain
+            // 
+            lblBusinessDomain.AutoSize = true;
+            lblBusinessDomain.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            lblBusinessDomain.Location = new Point(284, 309);
+            lblBusinessDomain.Name = "lblBusinessDomain";
+            lblBusinessDomain.Size = new Size(146, 13);
+            lblBusinessDomain.TabIndex = 11;
+            lblBusinessDomain.Text = "www.mestayhediyelik.com";
             // 
             // Form2
             // 
@@ -280,7 +284,6 @@
         private PictureBox imgCode;
         private Label label2;
         private Label lblBusinessName;
-        private Label lblBusinessDomain;
         private Label lblCodeName;
         private Label label5;
         private TextBox txtMargin;
@@ -289,5 +292,6 @@
         private TextBox txtProductName;
         private Label lblProductName;
         private Button btnPrint;
+        private Label lblBusinessDomain;
     }
 }

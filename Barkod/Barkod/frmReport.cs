@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,11 @@ namespace barcode
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(reportDataSource);
             reportViewer1.RefreshReport();
+
+            var setup = reportViewer1.GetPageSettings();
+            setup.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
+            reportViewer1.SetPageSettings(setup);
+
         }
 
         private DataTable dt()

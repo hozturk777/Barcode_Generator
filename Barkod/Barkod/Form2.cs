@@ -22,7 +22,7 @@ namespace Barkod
 
         private void btnBarkod_Click(object sender, EventArgs e)
         {
-            int Height = !string.IsNullOrEmpty(txtHeight.Text) ? int.Parse(txtHeight.Text) : 60;
+            int Height = !string.IsNullOrEmpty(txtHeight.Text) ? int.Parse(txtHeight.Text) : 40;
             //int Width = !string.IsNullOrEmpty(txtWidth.Text) ? int.Parse(txtWidth.Text) : 60;
 
             Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
@@ -31,16 +31,19 @@ namespace Barkod
             imgCode.Height = imgCode.Image.Height;
 
             // code name margin
-            int topMarginValue = !string.IsNullOrEmpty(txtMargin.Text) ? int.Parse(txtMargin.Text) : Height + 2; // Üst marj miktarı            
+            int topMarginValue = !string.IsNullOrEmpty(txtMargin.Text) ? int.Parse(txtMargin.Text) : Height; // Üst marj miktarı            
             lblProductCode.Top = imgCode.Top + topMarginValue;
             lblProductCode.Text = txtBox.Text;
 
             // barkod height
-            imgBarcode.Height = imgCode.Height + 110;
+            imgBarcode.Height = imgCode.Height + 100;
+            //imgBarcode.Width = imgCode.Width + 50;
 
             // product name
             lblProductName.Text = txtProductName.Text;
-            lblProductName.Top = imgBarcode.Height + 190;
+            lblProductName.Top = imgBarcode.Height + 160;
+            lblBusinessDomain.Top = imgBarcode.Height + 160;
+            //imgBarcode.Height = 10;
         }
 
         private void btnQRKod_Click(object sender, EventArgs e)
@@ -59,7 +62,7 @@ namespace Barkod
 
             // Yeni bir Bitmap oluştur
             int imgBarcode_Width = imgBarcode.Width;
-            int imgBarcode_Height = imgBarcode.Height;
+            int imgBarcode_Height = imgBarcode.Height - 50;
 
             Bitmap bitmap = new Bitmap(imgBarcode_Width, imgBarcode_Height);
 
@@ -114,11 +117,10 @@ namespace Barkod
 
             using (MemoryStream ms = new MemoryStream())
             {
-                
+
                 // Barkodu ms içerisine kaydet
                 //imgBarcode.Image.Save(ms, ImageFormat.Png);
                 bitmap.Save(ms, ImageFormat.Png);
-
 
                 // Diyelim ki "Barcode" adında bir DataTable var
                 AppData.BarcodeDataTable barcodeTable = appData.Barcode;
@@ -167,7 +169,7 @@ namespace Barkod
 
             // Kaydedilecek dosya yolunu belirle
             string filePath = Path.Combine(barcodeDirectory, $"{lblProductName}.png");
-            
+
 
             if (File.Exists(filePath))
             {
@@ -178,8 +180,9 @@ namespace Barkod
             else
             {
                 // Yeni bir Bitmap oluştur
+
                 int imgBarcode_Width = imgBarcode.Width;
-                int imgBarcode_Height = imgBarcode.Height;
+                int imgBarcode_Height = imgBarcode.Height - 35;
 
                 Bitmap bitmap = new Bitmap(imgBarcode_Width, imgBarcode_Height);
 
@@ -205,7 +208,7 @@ namespace Barkod
                 return filePath;
             }
 
-            
+
         }
 
         //private byte[] ImageToByteArray(Image image)
