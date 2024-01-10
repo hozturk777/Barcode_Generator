@@ -125,14 +125,14 @@ namespace Barkod
                 // Diyelim ki "Barcode" adında bir DataTable var
                 AppData.BarcodeDataTable barcodeTable = appData.Barcode;
 
-                for (int i = 0; i < 24; i++)
-                {
+                //for (int i = 0; i < 24; i++)
+                //{
                     //byte[] imageBytes = GetBarcodeImageBytes();
                     //Image image = ByteArrayToImage(imageBytes);
 
                     // DataTable'a yeni bir satır ekleyin
                     AppData.BarcodeRow newRow = barcodeTable.NewBarcodeRow();
-
+                appData.Barcode.Clear();
                     // Yeni satıra verileri ekleyin
                     newRow.ProductName = txtBox.Text;
                     newRow.BusinessName = lblBusinessName.Text;
@@ -141,9 +141,12 @@ namespace Barkod
                     barcodeTable.Clear();
                     appData.Barcode.Clear();
                     // DataTable'a satırı ekleyin
-                    //barcodeTable.AddBarcodeRow(txtBox.Text, lblBusinessName.Text, lblProductName.Text, "deneme");
-                    appData.Barcode.AddBarcodeRow(txtBox.Text, lblBusinessName.Text, lblProductName.Text, ms.ToArray());
-                }
+                    //barcodeTable.AddBarcodeRow(txtBox.Text, lblBusinessName.Text, lblProductName.Text, "deneme");                    
+                    for (int x = 0; x < 24; x++)
+                    {
+                        appData.Barcode.AddBarcodeRow(txtBox.Text, lblBusinessName.Text, lblProductName.Text, ms.ToArray());
+                    }
+                //}
 
                 // DataSet'i MemoryStream'e yazın veya başka işlemler yapın
                 //appData.WriteXml(ms);

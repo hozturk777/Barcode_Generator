@@ -39,7 +39,7 @@ namespace barcode
             reportViewer1.RefreshReport();
 
             var setup = reportViewer1.GetPageSettings();
-            setup.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
+            setup.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 1);
             reportViewer1.SetPageSettings(setup);
 
         }
