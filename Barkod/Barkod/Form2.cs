@@ -16,6 +16,7 @@ namespace Barkod
 {
     public partial class Form2 : Form
     {
+        OpenFileDialog openFileDialog = new OpenFileDialog();
         public Form2()
         {
             InitializeComponent();
@@ -144,7 +145,7 @@ namespace Barkod
                 for (int x = 0; x < 24; x++)
                 {
                     appData.Barcode.AddBarcodeRow(txtBox.Text, lblBusinessName.Text, lblProductName.Text, ms.ToArray());
-                }         
+                }
             }
 
             using (frmReport frm = new frmReport(appData.Barcode))
@@ -155,8 +156,7 @@ namespace Barkod
                     frm.ShowDialog();
                 }
             }
-        }
-
+        }        
 
         public string saveBarCode()
         {
@@ -180,7 +180,6 @@ namespace Barkod
             else
             {
                 // Yeni bir Bitmap oluştur
-
                 int imgBarcode_Width = imgBarcode.Width;
                 int imgBarcode_Height = imgBarcode.Height;
 
@@ -211,21 +210,82 @@ namespace Barkod
 
         }
 
-        //private byte[] ImageToByteArray(Image image)
-        //{
-        //    using (MemoryStream ms = new MemoryStream())
-        //    {
-        //        image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-        //        return ms.ToArray();
-        //    }
-        //}
+        private void btnGet_Click(object sender, EventArgs e)
+        {
+            //OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Bir Resim Seçin";
+            openFileDialog.Filter = "PNG Dosyaları|*.png|Tüm Dosyalar|*.*";
 
-        //private Image ByteArrayToImage(byte[] byteArray)
-        //{
-        //    using (MemoryStream ms = new MemoryStream(byteArray))
-        //    {
-        //        return Image.FromStream(ms);
-        //    }
-        //}
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                string fileName = Path.GetFileNameWithoutExtension(filePath);
+
+                // Bitmap dosyasını oku
+                Bitmap loadedBitmap = new Bitmap(filePath);
+
+                // Örneğin, resmi PictureBox'a göster
+                imgGet.Image = loadedBitmap;
+                txtGetProductName.Text = fileName;
+
+                // Resmi işleyebilirsiniz, örneğin parçalara bölebilirsiniz
+                //ProcessImage(loadedBitmap);
+            }
+        }
+
+        private void btnGetPrint_Click(object sender, EventArgs e)
+        {
+            AppData appData = new AppData();
+            string filePath = openFileDialog.FileName;
+
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                Bitmap loadedBitmap = new Bitmap(filePath);
+                // Barkodu ms içerisine kaydet
+                //imgBarcode.Image.Save(ms, ImageFormat.Png);
+                loadedBitmap.Save(ms, ImageFormat.Png);
+
+                // Diyelim ki "Barcode" adında bir DataTable var
+                AppData.BarcodeDataTable barcodeTable = appData.Barcode;
+
+                //byte[] imageBytes = GetBarcodeImageBytes();
+                //Image image = ByteArrayToImage(imageBytes);
+
+                // DataTable'a yeni bir satır ekleyin
+                AppData.BarcodeRow newRow = barcodeTable.NewBarcodeRow();
+                appData.Barcode.Clear();
+                // Yeni satıra verileri ekle
+                newRow.ProductName = txtBox.Text;
+                newRow.BusinessName = lblBusinessName.Text;
+                newRow.BusinessDomain = lblBusinessDomain.Text;
+                //newRow.Image = imgCode.ToString();
+                barcodeTable.Clear();
+                appData.Barcode.Clear();
+
+                // DataTable'a satırı ekle                
+                for (int x = 0; x < 24; x++)
+                {
+                    appData.Barcode.AddBarcodeRow(txtBox.Text, lblBusinessName.Text, lblProductName.Text, ms.ToArray());
+                }
+            }
+
+            using (frmReport frm = new frmReport(appData.Barcode))
+            {
+                frm.switchPath("3x8");
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    frm.ShowDialog();
+                }
+            }
+        }
+
+        public OpenFileDialog fileDialog()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Bir Resim Seçin";
+            openFileDialog.Filter = "PNG Dosyaları|*.png|Tüm Dosyalar|*.*";
+            return openFileDialog;
+        }
     }
 }

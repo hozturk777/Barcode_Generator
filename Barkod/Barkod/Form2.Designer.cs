@@ -48,8 +48,15 @@
             lblProductName = new Label();
             btnPrint = new Button();
             lblBusinessDomain = new Label();
+            imgGet = new PictureBox();
+            btnGet = new Button();
+            progressBar1 = new ProgressBar();
+            label4 = new Label();
+            txtGetProductName = new TextBox();
+            btnGetPrint = new Button();
             ((System.ComponentModel.ISupportInitialize)imgBarcode).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgCode).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imgGet).BeginInit();
             SuspendLayout();
             // 
             // lblKod
@@ -121,7 +128,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(39, 143);
+            label1.Location = new Point(38, 143);
             label1.Name = "label1";
             label1.Size = new Size(68, 20);
             label1.TabIndex = 7;
@@ -169,7 +176,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(39, 218);
+            label5.Location = new Point(46, 218);
             label5.Name = "label5";
             label5.Size = new Size(47, 20);
             label5.TabIndex = 14;
@@ -196,7 +203,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(39, 287);
+            label3.Location = new Point(36, 287);
             label3.Name = "label3";
             label3.Size = new Size(67, 20);
             label3.TabIndex = 17;
@@ -221,7 +228,7 @@
             // 
             // btnPrint
             // 
-            btnPrint.Location = new Point(545, 143);
+            btnPrint.Location = new Point(512, 300);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(95, 33);
             btnPrint.TabIndex = 19;
@@ -239,11 +246,71 @@
             lblBusinessDomain.TabIndex = 11;
             lblBusinessDomain.Text = "www.mestayhediyelik.com";
             // 
+            // imgGet
+            // 
+            imgGet.BackColor = Color.Transparent;
+            imgGet.BorderStyle = BorderStyle.FixedSingle;
+            imgGet.Location = new Point(196, 391);
+            imgGet.Name = "imgGet";
+            imgGet.Size = new Size(234, 128);
+            imgGet.TabIndex = 20;
+            imgGet.TabStop = false;
+            // 
+            // btnGet
+            // 
+            btnGet.Location = new Point(22, 486);
+            btnGet.Name = "btnGet";
+            btnGet.Size = new Size(100, 33);
+            btnGet.TabIndex = 21;
+            btnGet.Text = "Getir";
+            btnGet.UseVisualStyleBackColor = true;
+            btnGet.Click += btnGet_Click;
+            // 
+            // progressBar1
+            // 
+            progressBar1.Location = new Point(21, 357);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(651, 10);
+            progressBar1.TabIndex = 22;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(38, 391);
+            label4.Name = "label4";
+            label4.Size = new Size(67, 20);
+            label4.TabIndex = 24;
+            label4.Text = "Ürün Adı";
+            // 
+            // txtGetProductName
+            // 
+            txtGetProductName.Location = new Point(22, 414);
+            txtGetProductName.Name = "txtGetProductName";
+            txtGetProductName.Size = new Size(100, 23);
+            txtGetProductName.TabIndex = 23;
+            // 
+            // btnGetPrint
+            // 
+            btnGetPrint.Location = new Point(512, 486);
+            btnGetPrint.Name = "btnGetPrint";
+            btnGetPrint.Size = new Size(95, 33);
+            btnGetPrint.TabIndex = 25;
+            btnGetPrint.Text = "Yazdır";
+            btnGetPrint.UseVisualStyleBackColor = true;
+            btnGetPrint.Click += btnGetPrint_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(684, 546);
+            ClientSize = new Size(684, 612);
+            Controls.Add(btnGetPrint);
+            Controls.Add(label4);
+            Controls.Add(txtGetProductName);
+            Controls.Add(progressBar1);
+            Controls.Add(btnGet);
+            Controls.Add(imgGet);
             Controls.Add(btnPrint);
             Controls.Add(lblProductName);
             Controls.Add(label3);
@@ -268,6 +335,7 @@
             Text = "Barkod & QR Code v2.0";
             ((System.ComponentModel.ISupportInitialize)imgBarcode).EndInit();
             ((System.ComponentModel.ISupportInitialize)imgCode).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imgGet).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -294,5 +362,11 @@
         private Label lblProductName;
         private Button btnPrint;
         private Label lblBusinessDomain;
+        private PictureBox imgGet;
+        private Button btnGet;
+        private ProgressBar progressBar1;
+        private Label label4;
+        private TextBox txtGetProductName;
+        private Button btnGetPrint;
     }
 }
