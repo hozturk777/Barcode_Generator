@@ -20,32 +20,59 @@ namespace Barkod
         public Form2()
         {
             InitializeComponent();
+            // txtOperations
+            txtBusinessName.Text = "MestAyHediyelik";
+            txtBusinessDomain.Text = "www.mestayhediyelik.com";
+            txtHeight.Text = "40";
+            txtMargin.Text = txtHeight.Text;
         }
 
         private void btnBarkod_Click(object sender, EventArgs e)
         {
-            int Height = !string.IsNullOrEmpty(txtHeight.Text) ? int.Parse(txtHeight.Text) : 40;
-            //int Width = !string.IsNullOrEmpty(txtWidth.Text) ? int.Parse(txtWidth.Text) : 60;
+            if (!int.TryParse(txtHeight.Text, out _) || !int.TryParse(txtMargin.Text, out _))
+            {
+                MessageBox.Show("Lütfen Barkod Yüksekliği ya da Barkod No Aralığını sayı olarak giriniz !");
+            }
+            else if (string.IsNullOrEmpty(txtBox.Text))
+            {
+                MessageBox.Show("Lütfen Üretmek İstediğiniz Bir Kod Giriniz!");
+            }
+            else if (string.IsNullOrEmpty(txtProductName.Text))
+            {
+                MessageBox.Show("Lütfen Ürün Adı Giriniz!");
+            }
+            else
+            {
+                int Height = !string.IsNullOrEmpty(txtHeight.Text) ? int.Parse(txtHeight.Text) : 40;
+                //int Width = !string.IsNullOrEmpty(txtWidth.Text) ? int.Parse(txtWidth.Text) : 60;
 
-            Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
-            imgCode.Image = barcode.Draw(txtBox.Text, Height);
-            imgCode.Width = imgCode.Image.Width;
-            imgCode.Height = imgCode.Image.Height;
+                Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
+                imgCode.Image = barcode.Draw(txtBox.Text, Height);
+                imgCode.Width = imgCode.Image.Width;
+                imgCode.Height = imgCode.Image.Height;
 
-            // code name margin
-            int topMarginValue = !string.IsNullOrEmpty(txtMargin.Text) ? int.Parse(txtMargin.Text) : Height; // Üst marj miktarı            
-            lblProductCode.Top = imgCode.Top + topMarginValue;
-            lblProductCode.Text = txtBox.Text;
+                // code name margin
+                txtMargin.Text = txtHeight.Text;
+                int topMarginValue = int.Parse(txtMargin.Text) != Height ? int.Parse(txtMargin.Text) : Height; // Üst marj miktarı    
+                lblProductCode.Top = imgCode.Top + topMarginValue;
+                lblProductCode.Text = txtBox.Text;
 
-            // barkod height
-            imgBarcode.Height = imgCode.Height + 65;
-            //imgBarcode.Width = imgCode.Width + 50;
+                // barkod height
+                imgBarcode.Height = imgCode.Height + 65;
+                //imgBarcode.Width = imgCode.Width + 50;
 
-            // product name
-            lblProductName.Text = txtProductName.Text;
-            lblProductName.Top = imgBarcode.Height + 195;
-            lblBusinessDomain.Top = imgBarcode.Height + 195;
-            //imgBarcode.Height = 10;
+                // product name
+                lblProductName.Text = txtProductName.Text;
+                lblProductName.Top = imgBarcode.Height + 195;
+
+                // business
+                lblBusinessDomain.Top = imgBarcode.Height + 195;
+                lblBusinessDomain.Text = txtBusinessDomain.Text;
+                lblBusinessName.Text = txtBusinessName.Text;
+
+            }
+
+
         }
 
         private void btnQRKod_Click(object sender, EventArgs e)
@@ -64,7 +91,7 @@ namespace Barkod
 
             // Yeni bir Bitmap oluştur
             int imgBarcode_Width = imgBarcode.Width;
-            int imgBarcode_Height = imgBarcode.Height - 50;
+            int imgBarcode_Height = imgBarcode.Height;
 
             Bitmap bitmap = new Bitmap(imgBarcode_Width, imgBarcode_Height);
 
@@ -156,7 +183,7 @@ namespace Barkod
                     frm.ShowDialog();
                 }
             }
-        }        
+        }
 
         public string saveBarCode()
         {

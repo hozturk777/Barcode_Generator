@@ -54,6 +54,10 @@
             label4 = new Label();
             txtGetProductName = new TextBox();
             btnGetPrint = new Button();
+            label6 = new Label();
+            txtBusinessName = new TextBox();
+            label7 = new Label();
+            txtBusinessDomain = new TextBox();
             ((System.ComponentModel.ISupportInitialize)imgBarcode).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgCode).BeginInit();
             ((System.ComponentModel.ISupportInitialize)imgGet).BeginInit();
@@ -63,11 +67,11 @@
             // 
             lblKod.AutoSize = true;
             lblKod.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblKod.Location = new Point(320, 57);
+            lblKod.Location = new Point(305, 63);
             lblKod.Name = "lblKod";
-            lblKod.Size = new Size(59, 20);
+            lblKod.Size = new Size(80, 20);
             lblKod.TabIndex = 0;
-            lblKod.Text = "Kod Gir";
+            lblKod.Text = "Barkod No";
             // 
             // txtBox
             // 
@@ -75,9 +79,11 @@
             txtBox.Name = "txtBox";
             txtBox.Size = new Size(275, 23);
             txtBox.TabIndex = 1;
+            txtBox.TextAlign = HorizontalAlignment.Center;
             // 
             // btnBarkod
             // 
+            btnBarkod.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             btnBarkod.Location = new Point(196, 143);
             btnBarkod.Name = "btnBarkod";
             btnBarkod.Size = new Size(95, 33);
@@ -88,6 +94,7 @@
             // 
             // btnQRKod
             // 
+            btnQRKod.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             btnQRKod.Location = new Point(297, 143);
             btnQRKod.Name = "btnQRKod";
             btnQRKod.Size = new Size(95, 33);
@@ -108,6 +115,7 @@
             // 
             // btnSave
             // 
+            btnSave.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             btnSave.Location = new Point(400, 143);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(95, 33);
@@ -122,17 +130,18 @@
             txtHeight.Name = "txtHeight";
             txtHeight.Size = new Size(100, 23);
             txtHeight.TabIndex = 6;
+            txtHeight.TextAlign = HorizontalAlignment.Center;
             txtHeight.TextChanged += txtHeight_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(38, 143);
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(21, 148);
             label1.Name = "label1";
-            label1.Size = new Size(68, 20);
+            label1.Size = new Size(100, 15);
             label1.TabIndex = 7;
-            label1.Text = "Yükseklik";
+            label1.Text = "Barkod Yüksekliği";
             // 
             // imgCode
             // 
@@ -175,12 +184,12 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(46, 218);
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(23, 223);
             label5.Name = "label5";
-            label5.Size = new Size(47, 20);
+            label5.Size = new Size(96, 15);
             label5.TabIndex = 14;
-            label5.Text = "Aralık";
+            label5.Text = "Barkod No Aralık";
             // 
             // txtMargin
             // 
@@ -188,6 +197,7 @@
             txtMargin.Name = "txtMargin";
             txtMargin.Size = new Size(100, 23);
             txtMargin.TabIndex = 13;
+            txtMargin.TextAlign = HorizontalAlignment.Center;
             // 
             // lblProductCode
             // 
@@ -195,17 +205,17 @@
             lblProductCode.Font = new Font("Segoe UI", 7F, FontStyle.Bold, GraphicsUnit.Point);
             lblProductCode.Location = new Point(196, 287);
             lblProductCode.Name = "lblProductCode";
-            lblProductCode.Size = new Size(33, 12);
+            lblProductCode.Size = new Size(55, 12);
             lblProductCode.TabIndex = 15;
-            lblProductCode.Text = "label3";
+            lblProductCode.Text = "Barkod No";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(36, 287);
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(43, 292);
             label3.Name = "label3";
-            label3.Size = new Size(67, 20);
+            label3.Size = new Size(54, 15);
             label3.TabIndex = 17;
             label3.Text = "Ürün Adı";
             // 
@@ -215,6 +225,7 @@
             txtProductName.Name = "txtProductName";
             txtProductName.Size = new Size(100, 23);
             txtProductName.TabIndex = 16;
+            txtProductName.TextAlign = HorizontalAlignment.Center;
             // 
             // lblProductName
             // 
@@ -222,12 +233,13 @@
             lblProductName.Font = new Font("Segoe UI", 7F, FontStyle.Bold, GraphicsUnit.Point);
             lblProductName.Location = new Point(196, 310);
             lblProductName.Name = "lblProductName";
-            lblProductName.Size = new Size(33, 12);
+            lblProductName.Size = new Size(47, 12);
             lblProductName.TabIndex = 18;
-            lblProductName.Text = "label4";
+            lblProductName.Text = "Ürün Adı";
             // 
             // btnPrint
             // 
+            btnPrint.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             btnPrint.Location = new Point(512, 300);
             btnPrint.Name = "btnPrint";
             btnPrint.Size = new Size(95, 33);
@@ -250,7 +262,7 @@
             // 
             imgGet.BackColor = Color.Transparent;
             imgGet.BorderStyle = BorderStyle.FixedSingle;
-            imgGet.Location = new Point(196, 391);
+            imgGet.Location = new Point(912, 214);
             imgGet.Name = "imgGet";
             imgGet.Size = new Size(234, 128);
             imgGet.TabIndex = 20;
@@ -258,7 +270,8 @@
             // 
             // btnGet
             // 
-            btnGet.Location = new Point(22, 486);
+            btnGet.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGet.Location = new Point(750, 214);
             btnGet.Name = "btnGet";
             btnGet.Size = new Size(100, 33);
             btnGet.TabIndex = 21;
@@ -268,31 +281,33 @@
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(21, 357);
+            progressBar1.Location = new Point(667, 12);
             progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(651, 10);
+            progressBar1.Size = new Size(10, 588);
             progressBar1.TabIndex = 22;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(38, 391);
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(767, 292);
             label4.Name = "label4";
-            label4.Size = new Size(67, 20);
+            label4.Size = new Size(65, 15);
             label4.TabIndex = 24;
-            label4.Text = "Ürün Adı";
+            label4.Text = "Barkod Adı";
             // 
             // txtGetProductName
             // 
-            txtGetProductName.Location = new Point(22, 414);
+            txtGetProductName.Location = new Point(750, 310);
             txtGetProductName.Name = "txtGetProductName";
             txtGetProductName.Size = new Size(100, 23);
             txtGetProductName.TabIndex = 23;
+            txtGetProductName.TextAlign = HorizontalAlignment.Center;
             // 
             // btnGetPrint
             // 
-            btnGetPrint.Location = new Point(512, 486);
+            btnGetPrint.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGetPrint.Location = new Point(1212, 299);
             btnGetPrint.Name = "btnGetPrint";
             btnGetPrint.Size = new Size(95, 33);
             btnGetPrint.TabIndex = 25;
@@ -300,11 +315,51 @@
             btnGetPrint.UseVisualStyleBackColor = true;
             btnGetPrint.Click += btnGetPrint_Click;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(40, 364);
+            label6.Name = "label6";
+            label6.Size = new Size(61, 15);
+            label6.TabIndex = 27;
+            label6.Text = "Şirket İsmi";
+            // 
+            // txtBusinessName
+            // 
+            txtBusinessName.Location = new Point(21, 382);
+            txtBusinessName.Name = "txtBusinessName";
+            txtBusinessName.Size = new Size(100, 23);
+            txtBusinessName.TabIndex = 26;
+            txtBusinessName.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(71, 429);
+            label7.Name = "label7";
+            label7.Size = new Size(61, 15);
+            label7.TabIndex = 29;
+            label7.Text = "Web Sitesi";
+            // 
+            // txtBusinessDomain
+            // 
+            txtBusinessDomain.Location = new Point(21, 447);
+            txtBusinessDomain.Name = "txtBusinessDomain";
+            txtBusinessDomain.Size = new Size(162, 23);
+            txtBusinessDomain.TabIndex = 28;
+            txtBusinessDomain.TextAlign = HorizontalAlignment.Center;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(684, 612);
+            ClientSize = new Size(1319, 612);
+            Controls.Add(label7);
+            Controls.Add(txtBusinessDomain);
+            Controls.Add(label6);
+            Controls.Add(txtBusinessName);
             Controls.Add(btnGetPrint);
             Controls.Add(label4);
             Controls.Add(txtGetProductName);
@@ -332,7 +387,7 @@
             Controls.Add(txtBox);
             Controls.Add(lblKod);
             Name = "Form2";
-            Text = "Barkod & QR Code v2.0";
+            Text = "Barkod & QR Code v3.2";
             ((System.ComponentModel.ISupportInitialize)imgBarcode).EndInit();
             ((System.ComponentModel.ISupportInitialize)imgCode).EndInit();
             ((System.ComponentModel.ISupportInitialize)imgGet).EndInit();
@@ -368,5 +423,9 @@
         private Label label4;
         private TextBox txtGetProductName;
         private Button btnGetPrint;
+        private Label label6;
+        private TextBox txtBusinessName;
+        private Label label7;
+        private TextBox txtBusinessDomain;
     }
 }
